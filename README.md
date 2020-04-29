@@ -1,1 +1,1 @@
-Eine doppelt verkette Liste im Rahmen der ALD-Übung 2.
+Eine doppelt verkettete Liste im Rahmen der ALD-Übung 2.
