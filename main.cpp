@@ -42,7 +42,7 @@ void insert_element(liste_t *list, int key){
   if(list->length == 0){
     list->p_head = _elem;
     list->p_tail = _elem;
-    list->p_curr = _elem + sizeof(eintrag_t*);
+    list->p_curr = NULL;
     list->length++;
     return;
   }
