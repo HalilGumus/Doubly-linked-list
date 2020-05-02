@@ -64,10 +64,10 @@ void insert_element(liste_t *list, int key){
   while(list->p_curr != NULL){
     if(_elem->key > list->p_curr->key && _elem->key < list->p_curr->p_next->key){
       eintrag_t *swap = list->p_curr->p_next;
+      list->p_curr->p_next->p_prev = _elem;
       list->p_curr->p_next = _elem;
       _elem->p_prev = list->p_curr;
       _elem->p_next = swap;
-      list->p_curr->p_next->p_prev = _elem;
       list->p_curr = NULL;
     } else {
       list->p_curr = list->p_curr->p_next;
