@@ -117,7 +117,7 @@ int main(int argc, char const *argv[]) {
       std::cin >> size;
       for(int i = 0; i < size; i++){
         srand(clock());
-        insert_element(list, (rand() % 1000) + 1); //Füllt Liste mit Zahlen zwischen 1-1000
+        insert_element(list, (rand() % 1000) + 1); //Füllt Liste mit Zahlen zwischen 1-1000. Keine doppelten Werte.
       }
     }else if(menuSelector == 4){
       break;
