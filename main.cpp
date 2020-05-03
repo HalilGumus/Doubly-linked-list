@@ -27,11 +27,9 @@ liste_t *createList(){
 
 eintrag_t *createElement(int key){
   eintrag_t *elem = (eintrag*)malloc(sizeof(eintrag_t));
-
   elem->key = key;
   elem->p_next = NULL;
   elem->p_prev = NULL;
-
   return elem;
 }
 
@@ -76,12 +74,12 @@ void insert_element(liste_t *list, int key){
 }
 
 void print_list(liste_t *list){
-  eintrag_t *temp = list->p_head;
+  list->p_curr = list->p_head;
   int i = 0;
-  while(temp != NULL){
-    std::cout << "Index: " << i << " | Key: " << temp->key << std::endl;
+  while(list->p_curr != NULL){
+    std::cout << "Index: " << i << " | Key: " << list->p_curr->key << std::endl;
     i++;
-    temp = temp->p_next;
+    list->p_curr = list->p_curr->p_next;
   }
   std::cout << "\n";
 }
@@ -110,7 +108,6 @@ int main(int argc, char const *argv[]) {
         print_list(list);
       else
         std::cout << "Keine Elemente vorhanden!\n\n";
-      
     }else if(menuSelector == 3){
       int size;
       std::cout << "Wie viele Zahlen?: \n";
